@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spin Wheel App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn" class="button-9">Rules</button>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+              <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Rules of Color Revolution</h2>
+              </div>
+              <div class="modal-body">
+                  <p>1. The player will spin the wheel and receive tokens according to the color and number of the landing segment.</p>
+                  <br>
+                  <p>2. Sections of the wheel will have a color and number. The amount earned from the color and number will be multiplied together. For example, landing on Green 3 will give 2 * 3 or 6 tokens.</p>
+                  <br>
+                  <p>3. Ways to earn tokens:</p>
+                  <p>- Red is worth 1 token</p>
+                  <p>- Green is worth 2 tokens</p>
+                  <p>- Blue is worth 3 tokens</p>
+                  <p>- The number 3 is worth 1 token</p>
+                  <p>- The number 2 is worth 2 token</p>
+                  <p>- The number 1 is worth 3 token</p>
+                  <br>
+                  <p>4. It will cost 4.2 tokens to play once.</p>
+              </div>
+              <div class="modal-footer">
+                  <h3>Theoretical Probability Distribution</h3>
+              </div>
+              <div class="modal-body">
+                  <p>1 Token (Red 3): 1 / 9 %</p>
+                  <br>
+                  <p>2 Tokens (Red 2 or Green 3): 2 / 9 %</p>
+                  <br>
+                  <p>3 Tokens (Red 1 or Blue 3): 2 / 9 %</p>
+                  <br>
+                  <p>4 Tokens (Green 2): 1 / 9 %</p>
+                  <br>
+                  <p>6 Tokens (Green 1 or Blue 2): 2 / 9 %</p>
+                  <br>
+                  <p>9 Tokens (Blue 1): 1 / 9 %</p>
+              </div>
+          </div>
+
+
+      </div>
+      <div class="wrapper">
+          <div class="container">
+              <audio id="bflat" src="Click.mp3"></audio>
+              <canvas id="wheel"></canvas>
+              <button id="spin-btn" onclick="document.getElementById('bflat').play(); changeText();">Spin</button>
+              <img src="spinner-arrow-.svg" alt="spinner-arrow" />
+          </div>
+          <div id="final-value">
+              <p>Click On The Spin Button To Start</p>
+          </div>
+      </div>
+      <div id="token" class ="token" >You have 10 tokens left</div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+      <script src="script.js"></script>
+  </body>
+</html>
